@@ -8,8 +8,10 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, data) {
     var main = this;
+
+    main.data = data;
     main.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -17,11 +19,11 @@ angular.module('testApp')
     ];
 
     main.add = function(){
-      main.awesomeThings.push(main.message);
+      data.add(main.message);
     };
 
     main.deleteElem = function(el){
-      main.awesomeThings.splice(main.awesomeThings.indexOf(el));
+      data.remove(el);
     };
 
     main.messageCool = function(){
@@ -30,6 +32,13 @@ angular.module('testApp')
 
     main.isMessageVisible = function(){
       return main.message.length % 2 === 0;
+    };
+
+    $scope.mafonctiontri = function(value){
+      if(!isNaN(value)){
+        return number(value) % 2 === 0;
+      }
+      return false;
     };
 
     main.message = "Hello";

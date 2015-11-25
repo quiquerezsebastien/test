@@ -28,6 +28,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/demo/:unchiffre', {
+        templateUrl: 'views/demo.html',
+        controller: 'DemoCtrl',
+        controllerAs: 'demo'
+      })
       .otherwise({
         redirectTo: '/'
       });
