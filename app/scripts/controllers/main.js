@@ -8,8 +8,17 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('MainCtrl', function ($scope, data) {
+  .controller('MainCtrl', function ($scope,data, $http) {
     var main = this;
+
+    main.getMovies = function(){
+      var promise = $http.get('http://amc.ig.he-arc.ch:3003/discover/movie?sort_by=popularity.desc');
+      promise.then(function(result){
+        main.moviesPopular = result.data.results;
+      });
+    }
+
+    main.getMovies();
 
     main.data = data;
     main.awesomeThings = [
@@ -41,5 +50,5 @@ angular.module('testApp')
       return false;
     };
 
-    main.message = "Hello";
+    main.message = "Lite des films";
   });

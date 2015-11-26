@@ -12,9 +12,15 @@ angular.module('testApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
   
   this.movie = ['hello','world'];
-  
+
   this.add = function(el){
       this.movie.push(el);
+    };
+
+    this.object = {
+      titre:"un titre",
+      description:"une desc",
+      id:3
     };
 
    this.remove = function(el){
