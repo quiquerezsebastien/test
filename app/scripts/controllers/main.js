@@ -21,6 +21,7 @@ angular.module('testApp')
     main.getMovies();
 
     main.data = data;
+    
     main.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -50,5 +51,5 @@ angular.module('testApp')
       return false;
     };
 
-    main.message = "Lite des films";
+    main.message = "Liste des films";
   });

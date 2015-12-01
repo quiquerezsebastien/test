@@ -1,1 +1,6 @@
-<p>This is the demo view.{{demo.c}}</p>
+<h2>{{demo.c}}</h2>
+
+<div ng-repeat="movie in demo.moviesPopular">
+      <h2>{{movie.original_title}}</h2>
+      <img ng-src="http://image.tmdb.org/t/p/w185{{movie.poster_path}}">
+  </div>
