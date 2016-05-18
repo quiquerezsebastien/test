@@ -12,14 +12,11 @@ angular.module('testApp')
     
     var demo = this;
 
+    demo.data = data;
+
     demo.c = $routeParams.unchiffre;
 
-    demo.getMovies = function(){
-      var promise = $http.get('http://amc.ig.he-arc.ch:3003/discover/movie?sort_by=popularity.desc');
-      promise.then(function(result){
-        demo.moviesPopular = result.data.results;
-      });
-    }
+    demo.data.getData(demo.c)
 
-    demo.getMovies();
+
   });

@@ -1,6 +1,9 @@
-<h2>{{demo.c}}</h2>
 
-<div ng-repeat="movie in demo.moviesPopular">
-      <h2>{{movie.original_title}}</h2>
-      <img ng-src="http://image.tmdb.org/t/p/w185{{movie.poster_path}}">
-  </div>
+
+<h2>{{demo.data.movieData.original_title}}</h2>
+
+<img ng-src="http://image.tmdb.org/t/p/w185{{demo.data.movieData.poster_path}}">
+<h3>Description</h3>
+<p>{{demo.data.movieData.overview}}</p>
+<h3>Sortie</h3>
+<p>{{demo.data.movieData.release_date}}</p>
